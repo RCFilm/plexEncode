@@ -34,7 +34,7 @@ shopt -s extglob
 #
 # Required: script to add handbrake/ffmpeg/mediainfo/etc packages to your plex/sonarr/radarr dockers; https://gist.github.com/scrathe/ba29e50d95f71bfb207ccf6f74a425a7
 
-plex_logfile="/config/plexEncode/plexEncode.log"
+plex_logfile="/config/plexEncode/RCfilmPlexPost.log"
 plex_lockfile="/config/plexEncode/plexEncode.lock" # used to limit Plex DVR simultaneous encodes
 sonarr_logfile="/tv/scripts/logs/plexEncode.log"
 radarr_logfile="/movies/scripts/logs/plexEncode.log"
