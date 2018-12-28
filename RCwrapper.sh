@@ -11,6 +11,6 @@ unset SCRIPTPATH
 unset SUPPORT_PATH
 
 #***** call main script with argument
-./plexEncode.py "$1"
+./plexEncode.sh "$1"
 
 echo "RCwrapper script end: $1" >> RCfilmPlexPost.log
