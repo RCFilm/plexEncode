@@ -2,4 +2,4 @@
 
 echo "This is the wrapper script, it will exec "$@"
 
-exec /usr/bin/ffmpeg "$@"
+exec ./plexEncode.sh "$@"
