@@ -6,8 +6,8 @@ Setup: Plex \ Settings \ Live TV & DVR \ DVR Settings \ Postprocessing Script = 
 ```
 plexEncode.sh <file> <encoder> <remove_original>
 
-<encoder>           = ffmpeg    # .mkv file output. modify $ffmpeg_options to your specs.
-                    = handbrake # .m4v file output. modify $handbrake_options to your specs.
+<encoder>           = ffmpeg    # .mp4 file output. uses hevc_nvenc and adds hvc1 for MacOS compatibility - modify $ffmpeg_options to your specs. (Hardware Nvidia Transcoding on Pascal GPU or higher)
+                    = handbrake # .m4v file output. - modify $handbrake_options to your specs. (Software Transcoding)
 <remove_original>   = 0         # keep original input file.
                     = 1         # delete original input file.
 ```
