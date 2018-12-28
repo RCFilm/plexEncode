@@ -173,7 +173,7 @@ encode_file(){
         
 		# encode
 		start=$(date +%s%N)
-		ffmpeg -i "$file" $ffmpeg_options "$atomic_file" # > /dev/null 2>&1
+		/usr/bin/ffmpeg -i "$file" $ffmpeg_options "$atomic_file" # > /dev/null 2>&1
 		if [[ $? != 0 ]]; then
 			echo_log "ERROR, ffmpeg exit code $?"
 			rm "$atomic_file"
