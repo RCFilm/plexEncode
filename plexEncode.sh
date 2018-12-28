@@ -13,7 +13,7 @@ shopt -s extglob
 #
 # Shell:    plexEncode.sh <file> <encoder> <remove_original>
 #
-#           <encoder>           = ffmpeg    # .mkv file output. modify $ffmpeg_options to your specs.
+#           <encoder>           = ffmpeg    # .mmp4 file output. modify $ffmpeg_options to your specs.
 #                               = handbrake # .m4v file output. modify $handbrake_options to your specs.
 #           <remove_original>   = 0         # keep original input file.
 #                               = 1         # delete original input file.
@@ -154,7 +154,7 @@ encode_file(){
 		end=$(date +%s%N)
 	elif [[ $encoder = "ffmpeg" ]]; then
 		# output file extension
-		ext="mkv"
+		ext="mp4"
 		atomic_file="atomicfile_${RANDOM}.$ext"
 		
 		# check for ffmpeg
@@ -169,7 +169,7 @@ encode_file(){
 		# ffmpeg audio stream selection; https://ffmpeg.org/ffmpeg.html#Stream-selection
 		# ffmpeg x265; https://trac.ffmpeg.org/wiki/Encode/H.265
 		# ffmpeg_options="-map 0 -c:a copy -c:s copy -c:v libx265 -crf 18 -preset faster -pix_fmt yuv420p10le"
-		ffmpeg_options="-map 0 -c:a copy -c:s copy -c:v hevc_nvenc -preset slow"
+		ffmpeg_options="-map 0 -c:a copy -c:s copy -c:v hevc_nvenc -tag:v hvc1 -preset slow"
         
 		# encode
 		start=$(date +%s%N)
