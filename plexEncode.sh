@@ -169,7 +169,7 @@ encode_file(){
 		# ffmpeg audio stream selection; https://ffmpeg.org/ffmpeg.html#Stream-selection
 		# ffmpeg x265; https://trac.ffmpeg.org/wiki/Encode/H.265
 		# ffmpeg_options="-map 0 -c:a copy -c:s copy -c:v libx265 -crf 18 -preset faster -pix_fmt yuv420p10le"
-		ffmpeg_options="-map 0 -c:a copy -c:s copy -c:v libx265 -crf 18 -preset faster"
+		ffmpeg_options="-map 0 -c:a copy -c:s copy -c:v hevc_nvenc -preset faster"
         
 		# encode
 		start=$(date +%s%N)
